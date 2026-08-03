@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Length of Last Word</h1>
+		<pre>
+        diberikan string s yang konsisten berupa kata dan spasi, return length
+        of the last word dalam 1 string kata tersebut.
+    </pre>
+		<script>
+			var lengthOfLastWord = function (s) {
+				let result = s.trim().split(" ");
+				let result1 = result.reverse()[0].length;
+
+				console.log(result);
+				console.log(result1);
+
+				return result1;
+			};
+
+			console.log(lengthOfLastWord("luffy is still joyboy"));
+		</script>
+	</body>
+</html>
+<!-- 
+algoritma
+
+-->
