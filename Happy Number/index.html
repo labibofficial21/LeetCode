@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Happy Number</h1>
+		<pre>
+        happy number itu didefinisikan sebagai:
+        angka positif bebas, yang mana dipecah jadi pertambahan lalu pangkat
+        ulang terus sampe angka = 1, itu happy. selain 1 itu sad
+
+        contoh
+        19 itu berarti 1+9
+        nah 1^2 + 9^2 = 82
+        terus 8^2+2^2 = 68
+        seterusnya sampai hasilnya 1
+
+        return true kalo happy number, false kalo not happy number
+    </pre>
+
+		<script>
+			var isHappy = function (n) {
+				// n = n * 2;
+				let angka = [];
+				angka.push(n);
+				console.log(angka);
+
+				let test = angka.toString().split("");
+
+				console.log(test);
+
+				let squares = 0;
+
+				let result = test.map((value, index) => {
+					squares = Math.pow(Number(value), 2);
+
+					return squares;
+					// console.log(squares);
+					// console.log(index + "a");
+				});
+
+				// console.log(result);
+
+				for (let i = 0; i < result.length; i++) {
+					console.log(result[i]);
+				}
+
+				// console.log(result2);
+
+				// return n;
+			};
+
+			isHappy(19);
+		</script>
+	</body>
+</html>
+
+<!-- algoritma
+angka positif dipisah dulu
+misal 19 jadi 1 dan 9
+lalu masing2 index dipangkatin, hasilnya trus diulang lagi
+terus sampe hasil = 1 atau bukan 1
+
+
+-->

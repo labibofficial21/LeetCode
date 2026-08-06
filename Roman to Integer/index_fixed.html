@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Roman to Integer</h1>
+
+		<script>
+			var romanToInt = function (s) {
+				let container = [];
+				let result = 0;
+
+				let I = 1;
+				let V = 5;
+				let X = 10;
+				let L = 50;
+				let C = 100;
+				let D = 500;
+				let M = 1000;
+
+				// let a = "MCMXCIV";
+				let b = s.split("");
+				// console.log(b);
+
+				for (let j = 0; j < b.length; j++) {
+					// console.log(b[j] + "a");
+
+					if (b[j] == "I" && b[j + 1] == "V") {
+						// console.log(V - 1);
+						container.push(V - 1);
+						j++;
+					} else if (b[j] == "I" && b[j + 1] == "X") {
+						// console.log(X - 1);
+						container.push(X - 1);
+						j++;
+					} else if (b[j] == "X" && b[j + 1] == "L") {
+						// console.log(L - 10);
+						container.push(L - 10);
+						j++;
+					} else if (b[j] == "X" && b[j + 1] == "C") {
+						// console.log(C - 10);
+						container.push(C - 10);
+						j++;
+					} else if (b[j] == "C" && b[j + 1] == "D") {
+						// console.log(D - 100);
+						container.push(D - 100);
+						j++;
+					} else if (b[j] == "C" && b[j + 1] == "M") {
+						// console.log(M - 100);
+						container.push(M - 100);
+						j++;
+					} else if (b[j] == "I") {
+						container.push(I);
+					} else if (b[j] == "V") {
+						container.push(V);
+					} else if (b[j] == "X") {
+						container.push(X);
+					} else if (b[j] == "L") {
+						container.push(L);
+					} else if (b[j] == "C") {
+						container.push(C);
+					} else if (b[j] == "D") {
+						container.push(D);
+					} else if (b[j] == "M") {
+						container.push(M);
+					}
+				}
+
+				// console.log(container);
+
+				for (let a = 0; a < container.length; a++) {
+					result += container[a];
+				}
+
+				// console.log(answer);
+				// console.log(romanToInt("II"));
+
+				return result;
+			};
+
+			romanToInt(s);
+			// console.log(romanToInt("III"));
+		</script>
+	</body>
+</html>
+
+<!-- 
+algoritma roman to integer, mengubah angka romawi ke angka biasa
+
+setting setiap angka romawi menjadi angka biasa
+input yg brupa angka dipisah dulu per angka romawi
+trus dicocokkan dengan angka biasa
+lalu hitung dengan operator
+
+dan cek dulu dengan operator perhitungan
+
+-->

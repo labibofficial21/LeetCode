@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Two Sum</h1>
+
+		<script>
+			let nums = [2, 7, 11, 15];
+			let target = 9;
+			let number;
+			let result = [];
+			// console.log(nums.indexOf(11));
+
+			var twoSum = function (nums, target) {
+				for (let i = 0; i < nums.length; i++) {
+					// console.log(nums[i]);
+					console.log(`index dari angka ${nums[i]} adalah ${nums.indexOf(nums[i], i)}`);
+
+					let number = nums[i] + nums[i - 1];
+					// console.log(number);
+
+					if (number == target) {
+						// console.log("benar");
+						result.push(i);
+						// result.unshift(nums.indexOf(nums[i]));
+						// console.log(result);
+					}
+
+					// for (let j = 0; j < nums.length; j++) {
+					// 	console.log(nums[j] + "a" + nums[i] + "a");
+					// }
+				}
+
+				return result;
+			};
+
+			console.log(twoSum(nums, target));
+		</script>
+	</body>
+</html>
+<!-- 
+yang kupikirkan adalah setiap index array 
+ditambah ke index array berikutnya, 
+dan jika target cocok maka itu benar 
+-->

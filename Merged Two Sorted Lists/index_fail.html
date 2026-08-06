@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Merged Two Sorted Lists</h1>
+		<pre>
+            kamu diberikan kepala dari 2 list yang terhubung yaitu list1 dan list2
+            gabung 2 list menjadi 1 list terhubung, list harus dibuat dengan splicing
+            together dari node dari pertama dari kedua list.
+
+            return mengembalikan "kepala dari list yang digabungkan"
+        </pre
+		>
+
+		<script>
+			var mergeTwoLists = function (list1, list2) {
+				let list4 = list1.concat(list2).sort((a, b) => a - b);
+
+				return list4;
+			};
+
+			// mergeTwoLists([0, 2, 1, 5], [9, 0, 6, 4]);
+			// console.log(mergeTwoLists([0, 2, 1, 5], [9, 0, 6, 4]));
+		</script>
+	</body>
+</html>
+<!--
+fail kode
+kode benar secara algoritma,
+namun yang dicari adaah listnode, bukan berbentuk array
+aku belum tau kalo listnode itu adalah object
+-->

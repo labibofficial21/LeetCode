@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Reverse Vowels of a String</h1>
+
+		<pre>
+        diberikan var string bernama s, hanya di reverse untuk semua huruf
+        vowel dan return it.
+
+        huruf vowel itu a, i, u, e, o dan mereka bisa muncul dalam bentuk huruf
+        kecil dan kapital serta lebih dari satu kali
+    </pre>
+
+		<script>
+			var reverseVowels = function (s) {
+				let word = [];
+				let temp = [];
+				let index = [];
+
+				let tes = s.split("");
+
+				tes.map((value, index) => {
+					word.push(value);
+				});
+
+				for (let i = 0; i < word.length; i++) {
+					// console.log(`${word[i]} berisi index ${i}`);
+					let lower = word[i].toLowerCase();
+					if (lower === "a" || lower === "i" || lower === "u" || lower === "e" || lower === "o") {
+						temp.push(word[i]);
+						index.push(i);
+					}
+				}
+
+				// console.log(index);
+				// console.log(word);
+
+				temp.reverse();
+
+				index.map((v, i) => {
+					word.splice(v, 1, temp[i]);
+					// console.log(v);
+					// console.log(temp[i]);
+				});
+				console.log(word);
+				return word.join("");
+			};
+
+			reverseVowels("IceCreAm");
+		</script>
+	</body>
+</html>
+<!-- 
+algoritma
+
+yg perlu direverse hanya a i u e o
+cek dlu huruf satu persatu apakah ada yg termasuk a i u e o
+kalo ada di push huruf itu ke array baru
+lalu di reverse
+lalu disusun ulang dengan splice(harus inget indexnya)
+mengingat index mungkin bisa dicocokkan dengan var array berisi index
+-->

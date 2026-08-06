@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Palindrome Number</h1>
+		<p>diberikan sebuah integer x, return if x jika palindrome, false jika bukan</p>
+
+		<script>
+			var isPalindrome = function (x) {
+				// let number = prompt("give some number");
+				let number = x;
+				// console.log(number);
+				let answer;
+				let container = [];
+				let container2 = [];
+
+				container.push(number.toString().split(""));
+				container2 = container.flat(1);
+				// console.log(container2);
+				// console.log(container2.length);
+
+				for (let i = 0; i < container2.length; i++) {
+					// console.log(i);
+					// console.log("a");
+					if (container2[i] === container2.toReversed()[i]) {
+						console.log("benar");
+						// console.log(container2[i]);
+						// console.log(container2.toReversed()[i]);
+					} else {
+						console.log("salah");
+						return false;
+					}
+				}
+
+				return true;
+			};
+			isPalindrome(1334);
+		</script>
+	</body>
+</html>
+<!-- 
+palindrome itu jika dibaca terbalik ttp sama
+cara ngeceknya :
+masukkan dlu kedalam array
+cek index depan dan index belakang
+cek hingga index ditengah, 
+jika tidak punya pasangan/ index sama, maka abaikan
+jika benar, maka masukkan lagi ke array dan ubah ke angka dgn join
+jika salah bilang bukan palindrom
+-->
